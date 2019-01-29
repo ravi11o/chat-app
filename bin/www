@@ -5,19 +5,8 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('chat-app:server');
+var debug = require('debug')('todo:server');
 var http = require('http');
-
-var io = require('socket.io')(http);
-
-// console.log('Inside socket');
-
-io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
 
 /**
  * Get port from environment and store in Express.
@@ -31,6 +20,15 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var io = require('socket.io')(http);
+
+io.on('connection', function(socket){
+  console.log('coonected');
+  socket.on('chat message', function(msg){
+    console.log(msg); 
+    io.emit('chat message', msg);
+  });
+});
 
 /**
  * Listen on provided port, on all network interfaces.
