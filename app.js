@@ -47,33 +47,3 @@ http.listen(port, function(){
 
 module.exports = app;
 
-// var express = require('express');
-// var app = express();
-// var http = require('http').createServer(app);
-// var cookieParser = require('cookie-parser');
-// var io = require('socket.io')(http);
-// var port = process.env.PORT || 3000;
-// var path = require('path');
-
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
-
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// app.get('/', function(req, res){
-//   res.render('index');
-// });
-
-// io.on('connection', function(socket){
-// 	console.log('connected');
-//   socket.on('chat message', function(msg){
-//     io.emit('chat message', msg);
-//   });
-// });
-
-// http.listen(port, function(){
-//   console.log('listening on *:' + port);
-// });
